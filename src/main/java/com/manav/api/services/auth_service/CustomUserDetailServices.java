@@ -1,8 +1,8 @@
-package com.manav.api.services;
+package com.manav.api.services.auth_service;
 
-import com.manav.api.models.CustomUserDetails;
-import com.manav.api.models.User;
-import com.manav.api.models.UserRepository;
+import com.manav.api.models.auth_model.CustomUserDetails;
+import com.manav.api.models.db_model.User;
+import com.manav.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

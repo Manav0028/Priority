@@ -1,5 +1,6 @@
-package com.manav.api.models;
+package com.manav.api.repository;
 
+import com.manav.api.models.db_model.User;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

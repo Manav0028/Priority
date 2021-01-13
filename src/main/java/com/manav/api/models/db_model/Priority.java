@@ -1,4 +1,4 @@
-package com.manav.api.models;
+package com.manav.api.models.db_model;
 
 import org.springframework.stereotype.Component;
 

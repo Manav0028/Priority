@@ -1,4 +1,6 @@
-package com.manav.api.models;
+package com.manav.api.models.response_model;
+
+import com.manav.api.models.db_model.UserPriorityRating;
 
 import java.util.List;
 

@@ -1,14 +1,12 @@
 package com.manav.api.controller;
 
-import com.manav.api.models.*;
+import com.manav.api.models.db_model.Priority;
+import com.manav.api.models.response_model.UserPriorityRatingListJSON;
+import com.manav.api.repository.PriorityRepository;
+import com.manav.api.repository.UserPriorityRatingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 
 @RestController
@@ -16,12 +14,6 @@ public class PriorityController {
 
     @Autowired
     public PriorityRepository repository;
-
-    @Autowired
-    public UserRepository userRepository;
-
-    @Autowired
-    UserDetailsService userDetailsService;
 
     @Autowired
     public UserPriorityRatingRepository ratingRepository;
@@ -41,7 +33,6 @@ public class PriorityController {
 
     @PostMapping(path = "/rate")
     public @ResponseBody String ratePriority(Authentication authentication, @RequestBody UserPriorityRatingListJSON priorityRatingList) {
-//        UserDetails user = userDetailsService.loadUserByUsername(authentication.getName());
         priorityRatingList.getPriorityRatings().forEach(p -> p.setUsername(authentication.getName()));
         ratingRepository.saveAll(priorityRatingList.getPriorityRatings());
         return "done";

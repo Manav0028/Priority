@@ -1,5 +1,6 @@
-package com.manav.api.models;
+package com.manav.api.models.auth_model;
 
+import com.manav.api.models.db_model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

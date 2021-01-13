@@ -29,9 +29,11 @@ public class UserAuth extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/add").hasAnyAuthority("ADMIN")
-                .antMatchers("/all", "/rate").hasAnyAuthority("ADMIN", "USER").anyRequest().authenticated()
-                .and()
-                .httpBasic();
+                .antMatchers("/all", "/rate").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/**").permitAll()
+                .anyRequest().authenticated()
+                .and().httpBasic();
+
     }
 
     @Bean
